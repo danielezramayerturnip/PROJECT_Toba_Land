@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tobaland Turnipindo View – Kavling Dijual di Bogor, Mulai Rp 80 Juta</title>
+  <meta name="description" content="Kavling SHM di Leuwisadeng, Kabupaten Bogor. Mulai Rp 80 juta untuk sekitar 100 m², bisa dicicil kurang dari 3 tahun. Pilih kavling langsung dari peta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="2.style.css">
+  <script>
+    /* pasang tema sebelum halaman tampil supaya tidak berkedip */
+    (function(){var t=null;try{t=localStorage.getItem('tema')}catch(e){}
+    if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    document.documentElement.setAttribute('data-theme',t);})();
+  </script>
+</head>
+<body>
+<div class="page">
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <a class="logo" href="#"><span class="mark">T</span>Tobaland</a>
+    <ul id="menu">
+      <li><a href="#">Beranda</a></li>
+      <li><a href="#tentang">Tentang Kami</a></li>
+      <li><a href="#siteplan">Siteplan</a></li>
+      <li><a href="#keunggulan">Keunggulan</a></li>
+      <li><a href="#lokasi">Lokasi</a></li>
+      <li><a href="#bukti">Bukti</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="theme" id="theme" type="button" aria-label="Ganti mode gelap/terang">🌙</button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-in">
+      <div class="hero-txt">
+        <h1>Temukan Tanah<br>untuk Rumah Impianmu<br>di Bogor</h1>
+        <p>Kavling SHM mulai Rp 80 juta, bisa dicicil kurang dari 3 tahun.</p>
+        <a class="btn-o wa-link" href="#">Hubungi Kami</a>
+      </div>
+      <ul class="hero-list">
+        <li><b>Legalitas Jelas</b><span>Semua SHM</span></li>
+        <li><b>Harga Terbuka</b><span>Mulai Rp 80 jt</span></li>
+        <li><b>Cicilan Ringan</b><span>Kurang dari 3 tahun</span></li>
+      </ul>
+    </div>
+
+    <form class="search" id="sf">
+      <div class="f"><label for="q-p">Harga</label>
+        <select id="q-p"><option value="">Semua harga</option><option value="a">Di bawah 300 jt</option><option value="b">300 – 600 jt</option><option value="c">Di atas 600 jt</option></select></div>
+      <div class="f"><label for="q-a">Luas tanah</label>
+        <select id="q-a"><option value="">Semua luas</option><option value="a">Di bawah 150 m²</option><option value="b">150 – 250 m²</option><option value="c">Di atas 250 m²</option></select></div>
+      <div class="f"><label for="q-s">Status</label>
+        <select id="q-s"><option value="">Semua status</option><option value="ok">Tersedia</option><option value="bk">Booking</option><option value="sold">Terjual</option></select></div>
+      <button class="go" type="submit">Cari Kavling</button>
+    </form>
+  </header>
+
+  <!-- SELAMAT DATANG (gelap) -->
+  <section class="dark" id="tentang">
+    <h2>Selamat Datang</h2>
+    <div class="rule"><span></span></div>
+    <p>Tobaland Turnipindo View adalah kawasan kavling di Leuwisadeng, Kabupaten Bogor. Kavling mulai Rp 80 juta untuk ukuran sekitar 100 m², semuanya bersertifikat SHM dan bisa dicicil kurang dari 3 tahun. Pembeli bisa memilih kavling langsung dari peta, survei lokasi, lalu kami dampingi sampai sertifikat berpindah ke tangan Anda. Dokumentasi serah terima bisa dilihat di bagian Bukti.</p>
+    <a class="btn-line" href="#siteplan">Lihat Siteplan</a>
+  </section>
+
+  <!-- SITEPLAN -->
+  <section class="sec" id="siteplan">
+    <small class="kicker">Siteplan</small>
+    <h2>Pilih Kavling Langsung dari Peta</h2>
+    <p class="lead">Ketuk kavling untuk melihat luas, harga, dan status. Geser peta dengan jari, dan pakai tombol + dan − untuk zoom.</p>
+    <div class="chips" id="chips"><span id="cnt"></span></div>
+    <div class="sp">
+      <div class="mapbox">
+        <svg id="map" viewBox="0 0 842 595" role="img" aria-label="Peta kavling Tobaland"></svg>
+        <div class="tools">
+          <button id="zi" aria-label="Perbesar">+</button>
+          <button id="zo" aria-label="Perkecil">−</button>
+          <button id="zr" aria-label="Lihat semua" style="font-size:.7rem">All</button>
+        </div>
+      </div>
+      <aside class="panel" id="panel" aria-live="polite">
+        <p class="hint">Belum ada kavling dipilih. Ketuk salah satu petak di peta.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- KEUNGGULAN: kartu dengan label oranye -->
+  <section class="sec" id="keunggulan">
+    <small class="kicker">Keunggulan Kami</small>
+    <h2>Semua yang Perlu Anda Tahu<br>Sebelum Membeli Tanah.</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="ph" style="background-position:20% 50%"></div>
+        <div class="lab"><span>01.</span>Legalitas Jelas</div>
+        <p>Semua kavling berstatus SHM dan sertifikatnya bisa dicek langsung sebelum membayar.</p>
+        <a class="btn-sm wa-link" href="#">Tanya Kami</a>
+      </article>
+      <article class="card">
+        <div class="ph" style="background-position:60% 40%"></div>
+        <div class="lab"><span>02.</span>Akses Jalan Nyata</div>
+        <p>Kavling berada dekat jalan desa, sekolah, masjid, dan lapangan bola, jadi mudah dijangkau.</p>
+        <a class="btn-sm wa-link" href="#">Tanya Kami</a>
+      </article>
+      <article class="card">
+        <div class="ph" style="background-position:90% 60%"></div>
+        <div class="lab"><span>03.</span>Survei Kapan Saja</div>
+        <p>Chat lewat WhatsApp, lalu atur jadwal survei lokasi bersama kami langsung.</p>
+        <a class="btn-sm wa-link" href="#">Tanya Kami</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- VISI / LOKASI: foto kiri teks kanan -->
+  <section class="split" id="lokasi">
+    <div class="img" style="background:url('peta-lokasi.jpg') 25% center/cover" role="img" aria-label="Citra satelit lokasi Tobaland Turnipindo View"></div>
+    <div class="txt">
+      <h3>Lokasi <i>Strategis</i></h3>
+      <p>Berada di Leuwisadeng, Kabupaten Bogor. Di sekitar lokasi ada SDN Sibanteng 02, SMPN Satu Atap Leuwisadeng, Masjid Jami Al-Baroka, lapangan bola, dan permukiman warga. Kawasan perbukitan yang hijau, cocok untuk hunian maupun kebun.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn-sm wa-link" href="#">Atur Survei</a><a class="btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=TobaLand+Turnipindo+View+Curug+Bogor">Buka di Google Maps</a></div>
+    </div>
+  </section>
+  <section class="split rev">
+    <div class="img alt" style="background:url('Foto_Serah_Terima/sertifikat-kantor-bogor.jpg') center 30%/cover"></div>
+    <div class="txt">
+      <h3>Proses Pembelian <i>Mudah</i></h3>
+      <p>Pilih kavling di peta, survei lokasi bersama kami, booking, lalu bayar cash atau dicicil kurang dari 3 tahun. Setelah lunas, kami dampingi proses balik nama sampai selesai.</p>
+      <a class="btn-sm wa-link" href="#">Tanya Proses</a>
+    </div>
+  </section>
+
+  <!-- ===== BUKTI SERAH TERIMA (BARU) =====
+       Foto disimpan di folder: Foto_Serah_Terima/ -->
+  <section class="sec bukti-sec" id="bukti">
+    <small class="kicker">Bukti Serah Terima</small>
+    <h2>Sertifikat Sudah Berpindah<br>ke Tangan Pembeli.</h2>
+    <p class="lead">Dokumentasi nyata saat sertifikat diserahkan, akta ditandatangani, dan berkas diurus di kantor pertanahan. Ketuk foto untuk melihat lebih besar.</p>
+
+    <!-- Angka: GANTI sesuai data sebenarnya Bapak -->
+    <div class="bukti-stats">
+      <div><b data-n="9" data-s="+">9+</b><span>foto serah terima<br>dan proses balik nama</span></div>
+      <div><b>SHM</b><span>status sertifikat<br>semua kavling</span></div>
+      <div><b>BPN</b><span>diurus langsung di<br>kantor pertanahan</span></div>
+    </div>
+
+    <div class="bukti" id="bukti-grid">
+      <figure class="bi big">
+        <button type="button" aria-label="Perbesar foto: Serah terima sertifikat di kafe bukit">
+          <img src="Foto_Serah_Terima/serah-terima-kafe-bukit.jpg" alt="Penyerahan sertifikat tanah dengan jabat tangan di kafe bambu dengan pemandangan pohon pinus" loading="lazy" style="object-position:center 25%">
+        </button>
+        <figcaption><b>Serah terima di kafe bukit</b>Sertifikat diserahkan langsung, berkas lengkap di meja.</figcaption>
+      </figure>
+
+      <figure class="bi">
+        <button type="button" aria-label="Perbesar foto: Sertifikat dari kantor pertanahan Bogor">
+          <img src="Foto_Serah_Terima/sertifikat-kantor-bogor.jpg" alt="Memegang tiga sertifikat tanah di kantor pertanahan Kabupaten Bogor" loading="lazy" style="object-position:center 30%">
+        </button>
+        <figcaption><b>Tiga sertifikat sekaligus</b>Diambil di kantor pertanahan Bogor.</figcaption>
+      </figure>
+
+      <figure class="bi">
+        <button type="button" aria-label="Perbesar foto: Penandatanganan akta">
+          <img src="Foto_Serah_Terima/penandatanganan-akta.jpg" alt="Penandatanganan akta jual beli disaksikan dua orang di meja" loading="lazy">
+        </button>
+        <figcaption><b>Penandatanganan akta</b>Dibaca dan ditandatangani bersama.</figcaption>
+      </figure>
+
+      <figure class="bi">
+        <button type="button" aria-label="Perbesar foto: Serah terima di halaman">
+          <img src="Foto_Serah_Terima/serah-terima-halaman.jpg" alt="Jabat tangan saat penyerahan sertifikat hak milik di halaman parkir" loading="lazy" style="object-position:center 30%">
+        </button>
+        <figcaption><b>Sertifikat hak milik</b>Diserahkan dalam map plastik pelindung.</figcaption>
+      </figure>
+
+      <figure class="bi">
+        <button type="button" aria-label="Perbesar foto: Penyerahan di kantor">
+          <img src="Foto_Serah_Terima/serah-terima-kantor.jpg" alt="Penyerahan sertifikat di meja pelayanan kantor" loading="lazy" style="object-position:center 40%">
+        </button>
+        <figcaption><b>Penyerahan di loket</b>Berkas diterima langsung di kantor.</figcaption>
+      </figure>
+
+      <figure class="bi">
+        <button type="button" aria-label="Perbesar foto: Sertifikat Bekasi">
+          <img src="Foto_Serah_Terima/sertifikat-bekasi.jpg" alt="Dua orang berfoto sambil memperlihatkan sampul sertifikat tanah" loading="lazy">
+        </button>
+        <figcaption><b>Sertifikat resmi BPN</b>Sampul hijau tanda bukti hak.</figcaption>
+      </figure>
+
+      <figure class="bi">
+        <button type="button" aria-label="Perbesar foto: Tanda tangan pembeli">
+          <img src="Foto_Serah_Terima/tanda-tangan-pembeli.jpg" alt="Pembeli menandatangani berkas di atas sertifikat hak milik" loading="lazy" style="object-position:center 35%">
+        </button>
+        <figcaption><b>Tanda tangan pembeli</b>Berkas diperiksa sebelum ditandatangani.</figcaption>
+      </figure>
+
+      <figure class="bi">
+        <button type="button" aria-label="Perbesar foto: Serah terima sore hari">
+          <img src="Foto_Serah_Terima/serah-terima-sore.jpg" alt="Dua orang memegang sertifikat hak milik bersama-sama" loading="lazy" style="object-position:center 35%">
+        </button>
+        <figcaption><b>Serah terima sertifikat</b>Dipegang bersama saat penyerahan.</figcaption>
+      </figure>
+
+      <figure class="bi">
+        <button type="button" aria-label="Perbesar foto: Serah terima di rumah makan">
+          <img src="Foto_Serah_Terima/serah-terima-rumah-makan.jpg" alt="Penyerahan sertifikat hak milik di sebuah rumah makan" loading="lazy">
+        </button>
+        <figcaption><b>Serah terima di rumah makan</b>Pembeli bisa memilih tempat yang nyaman.</figcaption>
+      </figure>
+    </div>
+
+    <p class="bukti-note">Foto dipublikasikan dengan izin pembeli.</p>
+  </section>
+
+  <!-- GALERI BANGUNAN -->
+  <section class="sec gal-sec" id="galeri">
+    <small class="kicker">Galeri Bangunan</small>
+    <h2>Bangunan yang Sudah Berdiri di Tobaland</h2>
+    <p class="lead">Rumah dan saung yang sudah ada di kawasan Tobaland. Ketuk foto untuk melihat lebih besar.</p>
+    <div class="chips" id="gchips"><span id="gcnt"></span></div>
+<div class="gal" id="gal">
+      <figure class="gi" data-k="rumah">
+        <button type="button" aria-label="Perbesar foto: Rumah minimalis"><img src="Foto_Rumah/rumah-minimalis.jpg" alt="Rumah minimalis satu lantai dengan tiang hitam dan dinding batu alam" loading="lazy"></button>
+        <figcaption><b>Rumah minimalis</b>Rumah tembok satu lantai yang sudah selesai dibangun.</figcaption>
+      </figure>
+      <figure class="gi" data-k="rumah">
+        <button type="button" aria-label="Perbesar foto: Rumah dalam pengerjaan"><img src="Foto_Rumah/rumah-proses-bangun.jpg" alt="Rumah tembok beratap genteng merah yang sedang dikerjakan" loading="lazy"></button>
+        <figcaption><b>Rumah dalam pengerjaan</b>Tahap finishing, atap sudah terpasang.</figcaption>
+      </figure>
+      <figure class="gi" data-k="kayu">
+        <button type="button" aria-label="Perbesar foto: Rumah panggung dua lantai"><img src="Foto_Rumah/rumah-panggung-2-lantai.jpg" alt="Rumah panggung kayu dua lantai dengan balkon dan tangga" loading="lazy"></button>
+        <figcaption><b>Rumah panggung dua lantai</b>Rumah kayu dengan balkon, di tengah kebun dan sawah.</figcaption>
+      </figure>
+      <figure class="gi" data-k="kayu">
+        <button type="button" aria-label="Perbesar foto: Rumah kayu beratap ijuk"><img src="Foto_Rumah/rumah-kayu-ijuk.jpg" alt="Rumah kayu beratap ijuk dikelilingi pohon dan rumput" loading="lazy"></button>
+        <figcaption><b>Rumah kayu beratap ijuk</b>Rumah panggung kayu dengan teras di halaman yang hijau.</figcaption>
+      </figure>
+      <figure class="gi" data-k="kayu">
+        <button type="button" aria-label="Perbesar foto: Gazebo dan rumah kayu"><img src="Foto_Rumah/gazebo-rumah-kayu.jpg" alt="Gazebo kayu beratap genteng di depan rumah kayu" loading="lazy"></button>
+        <figcaption><b>Gazebo dan rumah kayu</b>Tempat bersantai di halaman rumah kayu.</figcaption>
+      </figure>
+      <figure class="gi" data-k="bambu">
+        <button type="button" aria-label="Perbesar foto: Saung bambu di kebun"><img src="Foto_Rumah/saung-bambu-kebun.jpg" alt="Saung bambu beratap ijuk di bawah pohon kelapa" loading="lazy" style="object-position:center 35%"></button>
+        <figcaption><b>Saung bambu di kebun</b>Saung beratap ijuk di antara pohon kelapa.</figcaption>
+      </figure>
+      <figure class="gi" data-k="bambu">
+        <button type="button" aria-label="Perbesar foto: Saung bambu, detail anyaman"><img src="Foto_Rumah/saung-bambu-anyaman.jpg" alt="Saung bambu dengan dinding anyaman dan atap ijuk" loading="lazy"></button>
+        <figcaption><b>Saung bambu, detail anyaman</b>Rangka bambu, dinding anyaman, dan lantai panggung.</figcaption>
+      </figure>
+      <figure class="gi" data-k="bambu">
+        <button type="button" aria-label="Perbesar foto: Saung bambu dan pemandangan bukit"><img src="Foto_Rumah/saung-bambu-pemandangan.jpg" alt="Saung bambu beratap ijuk dengan latar bukit hijau" loading="lazy"></button>
+        <figcaption><b>Saung bambu dan bukit</b>Pemandangan perbukitan dari sekitar lokasi.</figcaption>
+      </figure>
+      <figure class="gi" data-k="bambu">
+        <button type="button" aria-label="Perbesar foto: Saung bambu bersama pengunjung"><img src="Foto_Rumah/saung-bambu-pengunjung.jpg" alt="Enam pengunjung berfoto di depan saung bambu beratap ijuk dengan dinding anyaman" loading="lazy" style="object-position:center 40%"></button>
+        <figcaption><b>Saung bambu bersama pengunjung</b>Kunjungan survei ke lokasi, dengan latar bukit hijau.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- KENAPA PILIH (oranye) -->
+  <section class="orange">
+    <h3>Kenapa Pilih Tobaland?</h3>
+    <div class="why">
+      <div><b>Harga Jelas</b><p>Harga per m² dan harga total tertera langsung di peta, mulai Rp 80 juta.</p></div>
+      <div><b>Surat Lengkap</b><p>Semua SHM, bisa dicek sebelum bayar.</p></div>
+      <div><b>Siap Bangun</b><p>Kavling sudah berbentuk dan punya akses jalan.</p></div>
+      <div><b>Dampingan Penuh</b><p>Dibantu sampai proses balik nama selesai.</p></div>
+    </div>
+  </section>
+
+  <!-- CTA hitam -->
+  <section class="black">
+    <div>
+      <h3>Saatnya memiliki tanah impian Anda.</h3>
+      <p>Konsultasi gratis lewat WhatsApp, tanpa kewajiban membeli.</p>
+      <a class="btn-line wa-link" href="#">Hubungi Kami</a>
+    </div>
+    <div class="img"></div>
+  </section>
+  
+</div>
+
+<footer id="kontak">
+  <div class="foot">
+    <div>
+      <div class="logo"><span class="mark">T</span>Tobaland</div>
+      <p>Kavling dijual, Leuwisadeng, Kabupaten Bogor, Jawa Barat</p>
+    </div>
+    <a class="btn-o wa-link" href="#">Chat WhatsApp</a>
+  </div>
+</footer>
+
+<!-- TAMPILAN FOTO BESAR -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto diperbesar">
+  <button class="x" id="lb-x" type="button" aria-label="Tutup">✕</button>
+  <button class="pv" id="lb-p" type="button" aria-label="Foto sebelumnya">‹</button>
+  <button class="nx" id="lb-n" type="button" aria-label="Foto berikutnya">›</button>
+  <img id="lb-i" src="" alt="">
+  <p id="lb-c"></p>
+</div>
+
+<script src="3.script.js"></script>
+</body>
+</html>
